@@ -8,7 +8,7 @@ $today = date("j");
 $listitems = [];
 for ($k = 1; $k <= sizeof($data); $k++) :
   $allowed = mktime(0,0,0,12,$k,2019);
-  if ($now > $allowed && $k <= $today) :
+  if ($now > $allowed) :
     $listitems[] = '
       <a href="'.$data[$k]['href'].'">
         <h2>'.$data[$k]['heading'].'</h2>
