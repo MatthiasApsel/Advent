@@ -6,7 +6,7 @@ $title = 'Adventskalender 2019';
 $now = time();
 $today = date("j");
 $listitems = [];
-for ($k = 1; $k < sizeof($data); $k++) :
+for ($k = 1; $k <= sizeof($data); $k++) :
   $allowed = mktime(0,0,0,12,$k,2019);
   if ($now > $allowed && $k <= $today) :
     $listitems[] = '
@@ -15,24 +15,12 @@ for ($k = 1; $k < sizeof($data); $k++) :
         <p>'.$data[$k]['author'].'</p>
         <p>'.$data[$k]['teaser'].'</p>
       </a>';
-  elseif ($k == $today + 1) :
+  elseif ($k == $today + 1 || $k == 24) :
     $listitems[] = '<a href="'.$donate['href'].'">'.$donate['text'].'</a>';
   else :
     $listitems[] = '<p>'.str_replace('$$date$$',$k,$default).'</p>';
   endif;
-endfor;
-
-$allowed = mktime(0,0,0,12,24,2019);
-if ($now < $allowed) :
-  $listitems[] = '<a href="'.$donate['href'].'">'.$donate['text'].'</a>';
-else :
-  $listitems[] = '
-    <a href="'.$data[24]['href'].'">
-      <h2>'.$data[24]['heading'].'</h2>
-      <p>'.$data[24]['author'].'</p>
-      <p>'.$data[24]['teaser'].'</p>
-    </a>';
-endif; ?>
+endfor; ?>
 
 <!DOCTYPE html>
 <html lang="de">
