@@ -1,5 +1,5 @@
 <?php
-
+$title = 'Adventskalender 2019';
 $data = [
   '1' => [
     'href' => 'https://forum.selfhtml.org/self/2018/mar/27/footer-immer-ganz-unten/1717543#m17175430',
@@ -43,16 +43,147 @@ $data = [
     'author' => 'Gunnar Bittersmann am 26.07.2018',
     'teaser' => 'Eine Überschrift, deren Rand nur so lang wie der Inhalt ist &rarr; geht mit <code>max-width: max-content</code>',
   ],
+  '8' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '9' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '10' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '11' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '12' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '13' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '14' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '15' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '16' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '17' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '18' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '19' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '20' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '21' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '22' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '23' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
+  '24' => [
+    'href' => 'https://example.com',
+    'heading' => 'Überschrift',
+    'author' => 'Autor',
+    'teaser' => 'Teaser',
+  ],
 ];
-
 $default = 'Dieses Türchen öffnet sich erst am $$date$$. Dezember.';
 $donate = [
   'href' => 'https://selfhtml.org/spenden.html',
   'text' => 'Sie können das Projekt SELFHTML unterstützen.',
 ];
 
+$now = time();
+$today = date("j");
+$listitems = [];
+for ($k = 1; $k < sizeof($data); $k++) :
+  $allowed = mktime(0,0,0,12,$k,2019);
+  if ($now < $allowed) :
+    $listitems[] = '<p>'.str_replace('$$date$$',$k,$default).'</p>';
+  else :
+    $listitems[] = '
+      <a href="'.$data[$k]['href'].'">
+        <h2>'.$data[$k]['heading'].'</h2>
+        <p>'.$data[$k]['author'].'</p>
+        <p>'.$data[$k]['teaser'].'</p>
+      </a>';
+  endif;
+endfor;
 
-echo '<pre>';
-var_dump($data);
-echo '</pre>';
 ?>
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$title?></title>
+  </head>
+  <body>
+    <h1><?=$title?></h1>
+    <ol> <?php 
+      for ($k = 0; $k < sizeof($listitems); $k++) : ?>
+        <li><?=$listitems[$k]?></li> <?php
+      endfor; ?>
+    </ol>
+  </body>
+</html>
