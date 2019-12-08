@@ -145,7 +145,7 @@ $data = [
     'teaser' => 'Teaser',
   ],
 ];
-$default = 'Dieses Türchen öffnet sich erst am $$date$$. Dezember.';
+$default = 'Dieses Türchen öffnet sich erst am $$date$$.&nbsp;Dezember.';
 $donate = [
   'href' => 'https://selfhtml.org/spenden.html',
   'text' => 'Sie können das Projekt SELFHTML unterstützen.',
