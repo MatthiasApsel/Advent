@@ -15,6 +15,20 @@ html {
   --bordercolor: #c32e04;
   background-color: var(--bgcolor);
 }
+h1 {
+  font-size: 3rem;
+  margin: 1rem auto;
+  padding: 5rem 0 2rem;
+  text-align: center;
+}
+h1 a {
+  text-decoration: none;
+  color: inherit;
+  padding: 6rem 0 2rem calc(126px + 1rem);
+  background-image: url(Selfhtml-nico.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
 ol {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
