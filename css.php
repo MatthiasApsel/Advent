@@ -1,6 +1,8 @@
 html {
-  --bg: #e6f2f7;
-  background-color: var(--bg);
+  --bgcolor: #e6f2f7;
+  --linkcolor: #306f91;
+  --bordercolor: #c32e04;
+  background-color: var(--bgcolor);
 }
 ol {
   display: grid;
@@ -24,15 +26,33 @@ ol {
 li {
   height: 9rem;
   padding: 1rem;
-  border: 1px solid #c32e04;
+  border: thin solid var(--bordercolor);
   counter-increment: my-awesome-counter;
   position: relative;
   display: flex;
   justify-content: center;
 }
+li::after {
+  --size: 2rem;
+  content: counter(my-awesome-counter);
+  position: absolute;
+  color: var(--bgcolor);
+  font-size: calc(var(--size) * .75);
+  font-weight: bold;
+  right: calc(var(--size) * .25);
+  top: calc(var(--size) * .25);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  padding: calc(var(--size) * .2);
+  transform: rotate(-10deg);
+  background-color: var(--bordercolor);
+  border-radius: 50%;
+  text-align: center;
+  box-shadow: calc(var(--size) * .05) calc(var(--size) * .05) 0 #999;
+}
 li > a {
   text-decoration: none;
-  --linkcolor: #306f91;
   color: var(--linkcolor);
 }
 li > a > :first-child {
@@ -47,7 +67,7 @@ li > .donate, li > .comming_soon {
   text-align: center;
 }
 li > :not(.open) {
-  color: var(--bg);
+  color: var(--bgcolor);
   transition: color ease .5s;
 }
 li > :not(.open):hover, li > :not(.open):focus {
