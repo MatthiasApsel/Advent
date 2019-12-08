@@ -1,3 +1,16 @@
+function saveOrder () {
+  if (localStorage && !localStorage.getItem('SELFOrder')) {
+    localStorage.setItem('SELFOrder','<?=$orderstring?>');
+  }
+}
+function resetOrder () {
+  if (localStorage && localStorage.getItem('SELFOrder')) {
+    let SELForder = localStorage.getItem('SELFOrder').split(',');
+    for (let k = 1; k < 25; k++) {
+      document.querySelector('li:nth-child('+k+')').style.cssText = 'order: ' + SELForder[k-1];
+    }
+  }
+}
 function setOpenDays () {
   if (localStorage) {
     for (let k = 1; k < 25; k++) {
@@ -22,6 +35,8 @@ function saveTheDoor (event) {
   }
 }
 
+document.addEventListener('DOMContentLoaded', saveOrder);
+document.addEventListener('DOMContentLoaded', resetOrder);
 document.addEventListener('DOMContentLoaded', setOpenDays);
 document.addEventListener('DOMContentLoaded', function () {
   let calendar = document.querySelector('ol');

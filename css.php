@@ -1,3 +1,14 @@
+<?php
+$order = range(1, 24);
+shuffle($order); 
+$orderstring = implode(',',$order); 
+
+for ($k = 0; $k < 24; $k++) : ?>
+  li:nth-of-type(<?=$k+1?>) {
+    order: <?=$order[$k]?>;
+} <?php
+endfor; ?>
+
 html {
   --bgcolor: #e6f2f7;
   --linkcolor: #306f91;
