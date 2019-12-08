@@ -43,10 +43,10 @@ $data = [
     'teaser' => 'Eine Überschrift, deren Rand nur so lang wie der Inhalt ist &rarr; geht mit <code>max-width: max-content</code>',
   ],
   '8' => [
-    'href' => 'https://example.com',
-    'heading' => 'Überschrift',
-    'author' => 'Autor',
-    'teaser' => 'Teaser',
+    'href' => 'https://forum.selfhtml.org/self/2019/feb/8/mathematik-zum-wochenende/1742252#m1742252',
+    'heading' => 'Geraden in der Ebene',
+    'author' => 'Matthias Apsel am 08.02.2018',
+    'teaser' => 'In wieviele Gebiete kann eine Ebene durch <em>n</em> Geraden geteilt werden?',
   ],
   '9' => [
     'href' => 'https://example.com',
