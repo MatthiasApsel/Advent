@@ -25,7 +25,7 @@ $data = [
     'teaser' => 'Eine Beschreibungsliste (description list, dl), deren Elemente jeweils links und rechts zentriert und durch Punkte verbunden sind.',
   ],
   5 => [
-    'href' => 'https://forum.selfhtml.org/self/2018/jan/7roblem-mit-css-grid/1711672#m1711672',
+    'href' => 'https://forum.selfhtml.org/self/2018/jan/7/problem-mit-css-grid/1711672#m1711672',
     'heading' => 'Ausklappbare Navigation',
     'author' => 'Gunnar Bittersmann am 09.01.2018',
     'teaser' => 'Eine Navigation (nav ul), die auf kleinen Viewports hinter einem Button verschwindet.',

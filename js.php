@@ -1,25 +1,31 @@
-function saveOrder () {
-  if (localStorage && !localStorage.getItem('SELFOrder')) {
-    localStorage.setItem('SELFOrder','<?=$orderstring?>');
-  }
-}
-function resetOrder () {
-  if (localStorage && localStorage.getItem('SELFOrder')) {
-    let SELForder = localStorage.getItem('SELFOrder').split(',');
-    for (let k = 1; k < 25; k++) {
-      document.querySelector('li:nth-child('+k+')').style.cssText = 'order: ' + SELForder[k-1];
-    }
-  }
-}
-function setOpenDays () {
+function init () {
   if (localStorage) {
+ 
+    // save the order of the calendar items
+    if (!localStorage.getItem('SELFOrder')) {
+      localStorage.setItem('SELFOrder','<?=$orderstring?>');
+    }
+
+    // read stored order
+    if (localStorage.getItem('SELFOrder')) {
+      let SELForder = localStorage.getItem('SELFOrder').split(',');
+      for (let k = 1; k < 25; k++) {
+        document.querySelector('li:nth-child('+k+')').style.cssText = 'order: ' + SELForder[k-1];
+      }
+    }
+  
+    // read opened doors
     for (let k = 1; k < 25; k++) {
       if (localStorage.getItem('SELFday'+k)) {
         document.querySelector('li:nth-child('+k+') > a').classList.add('open');
       }
     }
   }
+
+  let calendar = document.querySelector('ol');
+  calendar.addEventListener('click', saveTheDoor);
 }
+
 function saveTheDoor (event) {
   let elem = event.target,
       link = elem.closest('a'),
@@ -35,10 +41,4 @@ function saveTheDoor (event) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', saveOrder);
-document.addEventListener('DOMContentLoaded', resetOrder);
-document.addEventListener('DOMContentLoaded', setOpenDays);
-document.addEventListener('DOMContentLoaded', function () {
-  let calendar = document.querySelector('ol');
-  calendar.addEventListener('click', saveTheDoor);
-});
+document.addEventListener('DOMContentLoaded', init);
