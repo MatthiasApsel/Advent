@@ -10,8 +10,8 @@ function setOpenDays () {
 function saveTheDoor (event) {
   let elem = event.target,
       link = elem.closest('a'),
-      listitem = elem.closest('li'),
-      list = elem.closest('ol'),
+      listitem = link.parentElement,
+      list = listitem.parentElement,
       day = Array.prototype.indexOf.call(list.children, listitem) + 1;
   
   if (link.classList.length == 0) {
