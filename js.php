@@ -1,13 +1,10 @@
 function init () {
-  if (localStorage) {
- 
-    // save the order of the calendar items
-    if (!localStorage.getItem('SELFOrder')) {
+  if (localStorage) { 
+     
+    if (!localStorage.getItem('SELFOrder')) { // save the order of the calendar items
       localStorage.setItem('SELFOrder','<?=$orderstring?>');
     }
-
-    // read stored order
-    if (localStorage.getItem('SELFOrder')) {
+    else { // read the stored order
       let SELForder = localStorage.getItem('SELFOrder').split(',');
       for (let k = 1; k < 25; k++) {
         document.querySelector('li:nth-child('+k+')').style.cssText = 'order: ' + SELForder[k-1];
