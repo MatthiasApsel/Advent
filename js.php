@@ -1,3 +1,5 @@
+'use strict';
+
 function init () {
   if (localStorage) { 
      
