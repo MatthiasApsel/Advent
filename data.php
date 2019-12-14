@@ -85,10 +85,10 @@ $data = [
     'teaser' => 'Im verlinkten Thread gibt es mehrere Beispiele, wie sich Tabellenspalten bei :hover markieren lassen.',
   ],
   15 => [
-    'href' => 'https://example.com',
-    'heading' => 'Überschrift',
-    'author' => 'Autor',
-    'teaser' => 'Teaser',
+    'href' => 'https://forum.selfhtml.org/self/2018/nov/3/programmierung-zum-wochenende/1735656#m1735656',
+    'heading' => 'Two Prisoners In Paradise',
+    'author' => 'Matthias Apsel am 3.11.2018',
+    'teaser' => 'Die Gefangenen stellen sich im Kreis auf und durch fortlaufendes Abzählen wird jeder dritte wieder in die Zelle zurückgeschickt.',
   ],
   16 => [
     'href' => 'https://example.com',
