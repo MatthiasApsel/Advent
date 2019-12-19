@@ -91,12 +91,12 @@ li > a > :first-child {
 li > a > :last-child {
   margin-bottom: 0;
 }
-li > .donate, li > .comming_soon {
+li > .donate, li > .coming_soon {
   margin: 0;
   align-self: center;
   text-align: center;
 }
-li > .donate::after, li > .comming_soon::after {
+li > .donate::after, li > .coming_soon::after {
   content: "";
   position: absolute;
   top: 0;
@@ -112,6 +112,6 @@ li > :not(.open):hover, li > :not(.open):focus {
   color: var(--linkcolor);
   transition: color ease .5s;
 }
-li > .comming_soon:hover {
+li > .coming_soon:hover {
   color: inherit;
 }
