@@ -21,12 +21,12 @@ function init () {
     }
   }
 
-  let calendar = document.querySelector('ol');
+  const calendar = document.querySelector('ol');
   calendar.addEventListener('click', saveTheDoor);
 }
 
 function saveTheDoor (event) {
-  let elem = event.target,
+  const elem = event.target,
       link = elem.closest('a'),
       listitem = link.parentElement,
       list = listitem.parentElement,

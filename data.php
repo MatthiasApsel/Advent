@@ -148,6 +148,7 @@ $data = [
 $default = 'Dieses Türchen öffnet sich erst am $$date$$.&nbsp;Dezember.';
 $donate = [
   'href' => 'https://selfhtml.org/spenden.html',
-  'text' => 'Sie können das Projekt SELFHTML unterstützen.',
+  'heading' => 'Es ist noch zu früh.',
+  'text' => 'Sie können das Projekt <span class="self">self</span>HTML unterstützen.',
 ];
 ?>

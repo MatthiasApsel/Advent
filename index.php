@@ -17,7 +17,11 @@ for ($k = 1; $k <= sizeof($data); $k++) :
         <p>'.$data[$k]['teaser'].'</p>
       </a>';
   elseif ($k == $today + 1 || $k == 24) :
-    $listitems[] = '<a class="donate" href="'.$donate['href'].'">'.$donate['text'].'</a>';
+    $listitems[] = '
+      <a class="donate" href="'.$donate['href'].'">
+        <h2>'.$donate['heading'].'</h2>
+        <p>'.$donate['text'].'</p>
+      </a>';
   else :
     $listitems[] = '<a class="comming_soon">'.str_replace('$$date$$',$k,$default).'</a>';
   endif;

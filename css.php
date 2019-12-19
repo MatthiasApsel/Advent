@@ -29,33 +29,36 @@ h1 a {
   background-position: left center;
   background-repeat: no-repeat;
 }
+span.self {
+  text-transform: uppercase;
+}
 ol {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-  max-width: 120rem;
+  grid-gap: 1rem;
+  max-width: 90rem;
   margin: 1rem auto;
-  padding: 0 1rem;  
+  padding: 0;
   counter-reset: my-awesome-counter;
   list-style: none;  
 }
-@media (min-width: 80rem) { /* 4x6 */ 
+@media (min-width: 30rem) { 
   ol {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 1fr);
   }
 }
-@media (min-width: 120rem) { /* 6x4 */ 
+@media (min-width: 50rem) {
   ol {
-    grid-template-columns: repeat(6, 1fr);
-  } 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
 }
 li {
-  height: 9rem;
-  padding: 1rem;
+  padding: 0;
   border: thin solid var(--bordercolor);
   counter-increment: my-awesome-counter;
   position: relative;
   display: flex;
-  justify-content: center;
 }
 li::after {
   --size: 2rem;
@@ -79,6 +82,8 @@ li::after {
 li > a {
   text-decoration: none;
   color: var(--linkcolor);
+  padding: 1rem;
+  flex: 1 1 auto;
 }
 li > a > :first-child {
   margin-top: 0;
@@ -88,8 +93,16 @@ li > a > :last-child {
 }
 li > .donate, li > .comming_soon {
   margin: 0;
-  padding: 20% 0;
+  align-self: center;
   text-align: center;
+}
+li > .donate::after, li > .comming_soon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 li > :not(.open) {
   color: var(--bgcolor);
