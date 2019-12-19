@@ -23,7 +23,7 @@ for ($k = 1; $k <= sizeof($data); $k++) :
         <p>'.$donate['text'].'</p>
       </a>';
   else :
-    $listitems[] = '<a class="comming_soon">'.str_replace('$$date$$',$k,$default).'</a>';
+    $listitems[] = '<a class="comming_soon">'.str_replace('##date##',$k,$default).'</a>';
   endif;
 endfor; ?>
 
