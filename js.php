@@ -29,8 +29,7 @@ function saveTheDoor (event) {
   const elem = event.target,
       link = elem.closest('a'),
       listitem = link.parentElement,
-      list = listitem.parentElement,
-      day = Array.prototype.indexOf.call(list.children, listitem) + 1;
+      day = Array.prototype.indexOf.call(calendar.children, listitem) + 1;
   
   if (link.classList.length == 0) {
     link.classList.add('open');
