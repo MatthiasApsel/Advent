@@ -41,7 +41,7 @@ endfor; ?>
     <ol> <?php 
       for ($k = 0; $k < sizeof($listitems); $k++) : ?>
         <li><?=$listitems[$k]?></li> <?php
-      endfor; ?>
+      endfor ?>
     </ol>
   </body>
 </html>

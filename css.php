@@ -7,7 +7,7 @@ for ($k = 0; $k < 24; $k++) : ?>
   li:nth-of-type(<?=$k+1?>) {
     order: <?=$order[$k]?>;
 } <?php
-endfor; ?>
+endfor ?>
 
 html {
   --bgcolor: #e6f2f7;
