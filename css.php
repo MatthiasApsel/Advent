@@ -1,5 +1,6 @@
 <?php
 $order = range(1, 24);
+srand($year);
 shuffle($order); 
 $orderstring = implode(',',$order); 
 
